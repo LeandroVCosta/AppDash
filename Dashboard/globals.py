@@ -7,7 +7,7 @@ server = 'trackvisiondb.database.windows.net'
 database = 'trackvisiondb'
 username = 'CloudSA49c766d4'
 password = 'Urubu1004'
-driver = 'ODBC+DRIVER+17+for+SQL+Server'
+driver = 'ODBC+DRIVER+18+for+SQL+Server'
 engine_stmt = ("mssql+pyodbc://%s:%s@%s/%s?driver=%s" % (username, password, server, database, driver ))
 conn = sqlalchemy.create_engine(engine_stmt)
 
