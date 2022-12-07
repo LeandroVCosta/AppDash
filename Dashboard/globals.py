@@ -21,8 +21,15 @@ syntax = ("select AVG(consumo) from dadoEnergia where fkCaixa = 1")
 result =conn.execute(syntax)
 for row in result:
     media = int(row[0]) * 20 * 10
-
+  
 estimativa = round(float(((media * 24 * 30) / 1000) * 1.04),2)
+if estimativa >= 1878 and estimativa < 3941:
+  estimativa *= 1.59
+elif estimativa >= 3971 and estimativa < 6500:
+  estimativa *= 1.64
+elif estimativa >= 6500:
+  estimativa *= 1.80
+estimativa = round(estimativa,2)
 
 
 syntax = ("select TOP 1 plano from dadoEnergia where fkCaixa=1 ")
